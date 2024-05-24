@@ -1,0 +1,196 @@
+@-webkit-keyframes float {
+            0% {
+              transform: translateX(0) translateY(10px);
+            }
+            25% {
+              transform: translateX(20px) translateY(0);
+            }
+            50% {
+              transform: translateX(0) translateY(-10px);
+            }
+            75% {
+              transform: translateX(-20px) translateY(0);
+            }
+            100% {
+              transform: translateX(0) translateY(10px);
+            }
+          }
+          @keyframes float {
+            0% {
+              transform: translateX(0) translateY(10px);
+            }
+            25% {
+              transform: translateX(20px) translateY(0);
+            }
+            50% {
+              transform: translateX(0) translateY(-10px);
+            }
+            75% {
+              transform: translateX(-20px) translateY(0);
+            }
+            100% {
+              transform: translateX(0) translateY(10px);
+            }
+          }
+          html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            position: relative;
+          }
+          
+          body {
+            background: #1a252f;
+            overflow: hidden;
+          }
+
+.background{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+}
+
+          .background img {
+            width: 300px;
+            height:300px;
+            margin-left: 500px;
+            margin-bottom: 50px;
+            border-radius: 40px;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: aliceblue;
+            font-size: 15px;
+            text-align: center;
+        }
+          .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+          }
+          .container .fire {
+            width: 320px;
+            min-width: 300px;
+            height: 320px;
+            min-height: 300px;
+            position: relative;
+            -webkit-animation: float 30s ease-in-out infinite;
+                    animation: float 30s ease-in-out infinite;
+          }
+          .container .fire.debug {
+            border: 1px solid red;
+          }
+          .container .fire.debug .fireplace {
+            border: 1px solid yellow;
+          }
+          .container .fire.debug .fireplace img {
+            display: none;
+          }
+          .container .fire .fireplace {
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            bottom: -30px;
+            left: 10px;
+            z-index: 0;
+          }
+          .container .fire .fireplace > img {
+            width: 100%;
+            height: auto;
+          }
+          
+          .background {
+            background-image: url("https://raw.githubusercontent.com/Mario-Duarte/CodePen/main/assets/background-fireplace.svg");
+            background-repeat: no-repeat;
+            background-size: 1024px 800px;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: -40px;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-animation: float 30s ease-in-out infinite;
+                    animation: float 30s ease-in-out infinite;
+            z-index: 1;
+          }
+          
+          .moon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -300px;
+            margin-top: -300px;
+            width: 400px;
+            height: 400px;
+            background-image: url("https://raw.githubusercontent.com/Mario-Duarte/CodePen/main/assets/moon.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+          }
+          
+          #fire {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -5%);
+            height: 50%;
+            width: 50%;
+          }
+
+          @media (max-width: 470px) {
+            .background img {
+                width: 300px;
+                height: 300px;
+                margin-left: 0;
+                margin-bottom: 0;
+            }
+        
+            .text-overlay {
+                font-size: 12px;
+                top: 10px;
+            }
+        
+            .container .fire {
+                width: 200px;
+                height: 200px;
+            }
+        
+            .container .fire .fireplace {
+                width: 180px;
+                height: 60px;
+                bottom: -20px;
+                left: 10px;
+            }
+        
+            .moon {
+                width: 200px;
+                height: 200px;
+                margin-left: -100px;
+                margin-top: -100px;
+            }
+        
+            #fire {
+                width: 80%;
+                height: 80%;
+            }
+        }
+        
